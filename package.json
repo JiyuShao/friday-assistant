@@ -1,0 +1,60 @@
+{
+  "name": "friday-assistant",
+  "version": "0.0.1",
+  "description": "F.R.I.D.A.Y. is a dedicated personal digital assistant and a reliable ally within WeChat.",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky",
+    "commit": "git-cz",
+    "commitlint": "commitlint --edit",
+    "start": "turbo run start",
+    "build": "turbo run build",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "lint": "turbo run lint:es lint:prettier lint:ts",
+    "lint:es": "eslint . --cache --quiet",
+    "lint:prettier": "prettier --list-different \"**/*.{js,jsx,ts,tsx,mjs,cjs,json,yml,yaml,md}\"",
+    "lint:ts": "tsc -b .",
+    "fix": "turbo run fix:es fix:prettier",
+    "fix:es": "eslint . --cache --quiet --fix",
+    "fix:prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,mjs,cjs,json,yml,yaml,md}\""
+  },
+  "keywords": [
+    "wechat",
+    "AI",
+    "assistant"
+  ],
+  "author": "Jiyu Shao <jiyu.shao@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@commitlint/cz-commitlint": "^19.5.0",
+    "@eslint/js": "^9.15.0",
+    "@types/node": "^22.9.1",
+    "commitizen": "^4.3.1",
+    "conventional-changelog-cli": "^5.0.0",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^15.12.0",
+    "husky": "^9.1.7",
+    "inquirer": "^12.3.1",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.15.0"
+  },
+  "packageManager": "pnpm@9.14.1",
+  "dependencies": {
+    "commander": "^13.0.0",
+    "dotenv": "^16.4.7",
+    "qrcode-terminal": "^0.12.0",
+    "wechaty": "^1.20.2"
+  }
+}
