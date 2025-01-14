@@ -7,14 +7,13 @@
     "prepare": "husky",
     "commit": "git-cz",
     "commitlint": "commitlint --edit",
-    "start": "turbo run start",
-    "build": "turbo run build",
+    "start": "tsx src/index.ts",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "lint": "turbo run lint:es lint:prettier lint:ts",
+    "lint": "pnpm run lint:es & pnpm run lint:prettier & pnpm run lint:ts",
     "lint:es": "eslint . --cache --quiet",
     "lint:prettier": "prettier --list-different \"**/*.{js,jsx,ts,tsx,mjs,cjs,json,yml,yaml,md}\"",
     "lint:ts": "tsc -b .",
-    "fix": "turbo run fix:es fix:prettier",
+    "fix": "pnpm run fix:es & pnpm run fix:prettier",
     "fix:es": "eslint . --cache --quiet --fix",
     "fix:prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,mjs,cjs,json,yml,yaml,md}\""
   },
@@ -33,7 +32,8 @@
     "@commitlint/config-conventional": "^19.6.0",
     "@commitlint/cz-commitlint": "^19.5.0",
     "@eslint/js": "^9.15.0",
-    "@types/node": "^22.9.1",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^22.10.5",
     "commitizen": "^4.3.1",
     "conventional-changelog-cli": "^5.0.0",
     "eslint": "^9.15.0",
@@ -54,7 +54,11 @@
   "dependencies": {
     "commander": "^13.0.0",
     "dotenv": "^16.4.7",
+    "lodash-es": "^4.17.21",
+    "node-fetch": "^3.3.2",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^1.20.2"
+    "wechaty": "^1.20.2",
+    "wechaty-puppet-wechat": "^1.18.4",
+    "wechaty-puppet-wechat4u": "^1.14.14"
   }
 }

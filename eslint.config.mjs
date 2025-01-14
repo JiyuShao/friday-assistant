@@ -1,7 +1,7 @@
 /*
  * @Author: Jiyu Shao <jiyu.shao@gmail.com>
  * @Date: 2024-11-21 11:50:42
- * @LastEditTime: 2025-01-13 16:47:57
+ * @LastEditTime: 2025-01-13 16:59:51
  */
 import eslint from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
@@ -46,7 +46,7 @@ export default [
       'sort-imports': 'off',
       'import/order': 'off',
       'import/no-dynamic-require': 'warn',
-      'import/no-nodejs-modules': 'warn',
+      'import/no-nodejs-modules': 'off',
       'import/first': 'error',
       'import/newline-after-import': 'error',
       'import/no-duplicates': 'error',
